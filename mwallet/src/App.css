@@ -1,0 +1,805 @@
+.App {
+  width: 360px;
+  height: 500px;
+  min-height: 500px;
+  max-height: 500px;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mwalletLogo {
+  width: 100px;
+  height: auto;
+  margin: 15px 0 4px 0;
+}
+
+.frontPageLogo {
+  width: 120px;
+  margin-top: 20px;
+  filter: brightness(0) saturate(100%) hue-rotate(15deg);
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 16px;
+  margin-bottom: 20px;
+}
+
+.frontPageButton {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  transition: all 0.2s ease;
+  background: #FF914D;
+  color: #000000;
+}
+
+.frontPageButton:hover {
+  transform: translateY(-1px);
+  background: #2c8ffa;
+  box-shadow: 0 2px 8px rgba(44, 143, 250, 0.4);
+}
+
+.frontPageButton:last-of-type {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.frontPageBottom {
+  padding: 16px 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: auto;
+  margin-bottom: 8px;
+}
+
+.frontPageBottom:hover {
+  cursor: pointer;
+  color: #2c8ffa;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.h4 {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+a {
+  color: #ff914d;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ff914d;
+}
+
+a:hover {
+  color: #2c8ffa;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.headerLogo {
+  height: 40px;
+  filter: brightness(0) saturate(100%) hue-rotate(15deg);
+}
+
+.content {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #ff914d;
+  border-radius: 4px;
+}
+
+/* Fix for Dropdown Styling */
+.select-container {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+}
+
+select {
+    width: 100%;
+    color: #ffffff;
+    background-color: #333333;
+    border: 2px solid #ff914d;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #ff914d;
+    pointer-events: none;
+}
+
+select option {
+    color: #ffffff;
+    background-color: #444444;
+    padding: 10px;
+}
+
+select:hover {
+    background-color: #444444;
+    border-color: #2c8ffa;
+    box-shadow: 0 0 8px rgba(44, 143, 250, 0.3);
+}
+
+select:focus {
+    border-color: #ff914d;
+    outline: none;
+}
+
+/* Ant Design Select Customization */
+.ant-select-selector {
+    background-color: #333333 !important;
+    border-color: #ff914d !important;
+    color: #ffffff !important;
+    border-radius: 5px !important;
+}
+
+.ant-select-arrow {
+    color: #ff914d !important;
+}
+
+.ant-select-dropdown {
+    background-color: #1a1a1a !important;
+}
+
+.ant-select-item-option {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+}
+
+.ant-select-item-option:hover {
+    background-color: #555555 !important;
+}
+
+/* Styling for the new wallet input field */
+.walletInput {
+  background-color: #1a1a1a !important;
+  border-color: #ff914d !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.walletInput:hover {
+  border-color: #2c8ffa !important;
+  box-shadow: 0 0 8px rgba(44, 143, 250, 0.3) !important;
+}
+
+.walletInput::placeholder {
+  color: #a0a0a0 !important;
+}
+
+.walletInput:focus {
+  border-color: #ff914d !important;
+  outline: none !important;
+}
+
+/* Wallet Components */
+.walletName {
+  font-weight: bold;
+  margin: 15px 0 5px 0;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.logoutButton {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 145, 77, 0.15);
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 145, 77, 0.2);
+}
+
+.logoutButton:hover {
+  background-color: rgba(44, 143, 250, 0.25);
+  box-shadow: 0 2px 12px rgba(44, 143, 250, 0.3);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.walletView {
+  width: 100%;
+  height: calc(100% - 42px);
+  overflow-y: auto;
+  padding: 12px 0;
+}
+
+.walletView::-webkit-scrollbar {
+  width: 4px;
+}
+
+.walletView::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.walletView::-webkit-scrollbar-thumb {
+  background-color: #ff914d;
+  border-radius: 4px;
+}
+
+/* Ant Design Customizations */
+.ant-tabs {
+  color: #ffffff;
+}
+
+.ant-tabs-tab {
+  color: #a0a0a0 !important;
+}
+
+.ant-tabs-tab-active {
+  color: #ff914d !important;
+}
+
+.ant-tabs-ink-bar {
+  background: #ff914d !important;
+}
+
+.ant-btn-primary {
+  background: #ff914d;
+  color: #000000 !important;
+  border-color: #ff914d;
+  font-size: 16px;
+  font-weight: 600;
+  height: 40px;
+  text-shadow: none;
+  box-shadow: 0 2px 8px rgba(255, 145, 77, 0.3);
+}
+
+.ant-btn-primary:hover {
+  background: #2c8ffa !important;
+  border-color: #2c8ffa !important;
+  box-shadow: 0 2px 12px rgba(44, 143, 250, 0.4);
+}
+
+.ant-input {
+  background-color: #1a1a1a;
+  border-color: #333333;
+  color: #ffffff;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+.ant-input::placeholder {
+  color: #a0a0a0;
+}
+
+.ant-select-selector {
+  background-color: #1a1a1a !important;
+  border-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.ant-select-arrow {
+  color: #ff914d !important;
+}
+
+.ant-tooltip-inner {
+  background-color: #1a1a1a;
+}
+
+.ant-spin-dot-item {
+  background-color: #ff914d;
+}
+
+/* Additional styling for consistency */
+.seedPhraseContainer {
+  background-color: #222222 !important;
+  border: 1px solid #333333 !important;
+  border-radius: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+.nftImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.sendRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.sendInput {
+  flex: 1;
+}
+
+/* Login Page Styles */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #000000;
+  padding: 20px 16px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 320px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.logo-container img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.login-box h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-box .ant-form-item {
+  margin-bottom: 12px;
+}
+
+.login-box .ant-input-password {
+  background-color: #000000;
+  border: 1px solid #ff914d;
+  border-radius: 8px;
+  height: 42px;
+}
+
+.login-box .ant-input-password input {
+  background-color: transparent;
+  color: #ffffff;
+  height: 40px;
+  font-size: 13px;
+  padding: 0 10px;
+}
+
+.login-box .ant-btn-primary {
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0;
+  transition: all 0.2s ease;
+  background: #FF914D;
+  color: #000000;
+  box-shadow: none;
+}
+
+.login-box .ant-btn-primary:hover {
+  transform: translateY(-1px);
+  background: #2c8ffa;
+  box-shadow: 0 2px 8px rgba(44, 143, 250, 0.4);
+}
+
+.login-box .ant-btn-link {
+  color: #ff914d;
+  font-size: 14px;
+  margin-top: 16px;
+  height: auto;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.login-box .ant-btn-link:hover {
+  color: #2c8ffa;
+  transform: translateY(-1px);
+}
+
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-icon {
+  cursor: pointer;
+  color: #ff914d;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-toggle-icon:hover {
+  color: #2c8ffa;
+}
+
+.ant-input-prefix {
+  margin-right: 10px;
+}
+
+.site-form-item-icon {
+  color: #ff914d;
+  font-size: 18px;
+}
+
+/* Form validation messages */
+.ant-form-item-explain-error {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #ff4d4f;
+  padding-left: 4px;
+}
+
+/* Message styles for login */
+.ant-message {
+  top: 8px;
+}
+
+.ant-message-notice-content {
+  background: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #ff914d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.ant-message-success .anticon {
+  color: #ff914d;
+  font-size: 16px;
+}
+
+/* Dropdown styles */
+.ant-select-dropdown {
+  background-color: #1a1a1a !important;
+  border: 1px solid #2c8ffa !important;
+}
+
+.ant-select-item {
+  color: #ffffff !important;
+  font-size: 13px !important;
+  padding: 6px 12px !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: rgba(44, 143, 250, 0.2) !important;
+}
+
+.ant-select-item-option-active {
+  background-color: rgba(255, 145, 77, 0.1) !important;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.logout-icon {
+  color: #ff914d;
+  font-size: 18px;
+  padding: 8px;
+  background-color: rgba(255, 145, 77, 0.15);
+  box-shadow: 0 2px 8px rgba(255, 145, 77, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-icon:hover {
+  color: #2c8ffa;
+  background-color: rgba(44, 143, 250, 0.25);
+  box-shadow: 0 2px 12px rgba(44, 143, 250, 0.3);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: rgba(26, 26, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 48px;
+  min-height: 48px;
+  backdrop-filter: blur(10px);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-left .logo-icon {
+  font-size: 18px;
+  color: #FF914D;
+}
+
+.header-left .logo-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.chain-dropdown {
+  width: 120px;
+  height: 32px;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 145, 77, 0.5);
+  border-radius: 16px;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.chain-dropdown:hover {
+  border-color: #FF914D;
+  box-shadow: 0 0 8px rgba(255, 145, 77, 0.2);
+}
+
+.chain-dropdown .ant-select-selector {
+  height: 32px !important;
+  padding: 0 12px !important;
+  border-radius: 16px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.chain-dropdown .ant-select-selection-item {
+  line-height: 30px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+}
+
+.chain-dropdown .ant-select-arrow {
+  color: #FF914D !important;
+  font-size: 12px !important;
+  right: 14px !important;
+}
+
+/* Dropdown Panel Styles */
+.ant-select-dropdown {
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(255, 145, 77, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ant-select-item {
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  margin: 2px 0 !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+.ant-select-item-option-active {
+  background-color: rgba(255, 145, 77, 0.1) !important;
+  color: #FF914D !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: rgba(255, 145, 77, 0.2) !important;
+  color: #FF914D !important;
+}
+
+.ant-select-item:hover {
+  background-color: rgba(255, 145, 77, 0.15) !important;
+}
+
+/* Network Status Indicator */
+.network-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #2ecc71;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.network-indicator.testnet {
+  background-color: #FF914D;
+}
+
+/* Header adjustments for network dropdown */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Enhanced glowing effects */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 145, 77, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 145, 77, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 145, 77, 0.5);
+  }
+}
+
+.ant-btn-primary {
+  animation: glow 2s infinite;
+}
+
+/* NFT Grid */
+.nftGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 6px;
+  padding: 6px;
+  width: 100%;
+}
+
+/* Token List */
+.tokenList {
+  width: 100%;
+  padding: 6px 0;
+}
+
+.tokenItem {
+  padding: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Send Form */
+.sendForm {
+  width: 100%;
+  padding: 8px;
+}
+
+/* Tabs */
+.ant-tabs-nav {
+  margin-bottom: 6px !important;
+}
+
+.ant-tabs-content {
+  height: calc(100% - 42px);
+  overflow-y: auto;
+}
+
+/* Toast Notification Styles */
+.Toastify__toast {
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.Toastify__toast-body {
+  color: #000000 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.Toastify__toast-body > div:last-child {
+  color: #000000 !important;
+  font-weight: 500 !important;
+}
+
+.Toastify__close-button {
+  color: rgba(0, 0, 0, 0.7) !important;
+  opacity: 1 !important;
+}
+
+.Toastify__toast-icon {
+  color: #2ecc71 !important;
+  margin-right: 12px !important;
+}

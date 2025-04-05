@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b6997ef0.css",
+    "main.js": "/static/js/main.85831dfb.js",
+    "static/media/mwallet.png": "/static/media/mwallet.5166111521390dc2e778.png",
+    "static/media/noImg.png": "/static/media/noImg.c8524b4819bc2c88e490.png",
+    "index.html": "/index.html",
+    "main.b6997ef0.css.map": "/static/css/main.b6997ef0.css.map",
+    "main.85831dfb.js.map": "/static/js/main.85831dfb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6997ef0.css",
+    "static/js/main.85831dfb.js"
+  ]
+}

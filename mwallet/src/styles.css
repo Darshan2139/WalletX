@@ -1,0 +1,13 @@
+.ant-dropdown-menu {
+  background-color: #1a1a1a !important; /* Set dropdown background to dark gray */
+  color: #ffffff !important; /* Set text color to white */
+  border: 1px solid #333333 !important; /* Add a border for better visibility */
+}
+
+.ant-dropdown-menu-item {
+  color: #ffffff !important; /* Ensure dropdown items are visible */
+}
+
+.ant-dropdown-menu-item:hover {
+  background-color: #333333 !important; /* Highlight hovered item */
+}
