@@ -1,7 +1,8 @@
 # 🚀 WalletX – Multi-Chain Browser Extension Wallet
 
+## 🖥️Preview 
+![Mainpage](./images/Mainpage.jpg)
 
-[Mainpage](images/Mainpage.jpg)
 WalletX is a secure, developer-friendly, multi-chain browser extension wallet built for seamless integration with dApps. Designed with flexibility in mind, WalletX supports Ethereum, Solana, and other blockchain networks, offering developers an easy-to-use API and users a clean, intuitive interface for managing their assets.
 
 ---
