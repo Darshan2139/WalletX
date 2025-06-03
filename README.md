@@ -44,7 +44,7 @@ WalletX was proudly built and presented during the **Nirama HackNUthon**. Compet
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Darshan2139/WalletX.git
+git clone
 cd WalletX
 ```
 
@@ -95,12 +95,7 @@ npm run build
 
 ---
 
-## 🙌 Contributors
 
-- 💻 Darshan Kachhiya
-- ⚙️ Maitrik Makwana 
-- 🌐 Manav Savalia
-- ☁️ Shreel Joshi
 
 ---
 
@@ -110,8 +105,9 @@ MIT License © 2025 WalletX Team
 
 ---
 
-## 🌐 Connect With Us
 
-- GitHub: [github.com/Darshan2139/WalletX](https://github.com/Darshan2139/WalletX)
-- Email: darshankachhiya.ce@gmail.com
+
+
+-
+- 
 
